@@ -31,6 +31,7 @@ import AdditionalResourcesFive from "./pages/hc/additionalResources/five";
 import AdditionalResourcesSix from "./pages/hc/additionalResources/six";
 import AgeVerificationsOne from "./pages/hc/ageVerification/one";
 import AgeVerificationsTwo from "./pages/hc/ageVerification/two";
+import Download from "./pages/download/download";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -40,6 +41,10 @@ const router = createBrowserRouter(
       <Route path="/about" element={<About />} />
     </Route>
   )
+);
+
+const downloadRouter = createBrowserRouter(
+  createRoutesFromElements(<Route path="/" element={<Download />} />)
 );
 
 const nestedRouter = createBrowserRouter(
@@ -117,7 +122,7 @@ const nestedRouter = createBrowserRouter(
 const root = ReactDOM.createRoot(document.getElementById("root")!);
 root.render(
   <React.StrictMode>
-    <RouterProvider router={nestedRouter} />
+    <RouterProvider router={downloadRouter} />
   </React.StrictMode>
 );
 

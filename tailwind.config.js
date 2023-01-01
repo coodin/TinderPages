@@ -28,6 +28,7 @@ module.exports = {
           "linear-gradient(0deg, #FD267A -0.61%, #FF7854 99.76%);",
         hoverContactUsLinearGradient:
           "linear-gradient(0deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.08)), linear-gradient(0deg, #FD267A -0.61%, #FF7854 99.76%);",
+        downloadLinearGradient: "linear-gradient(45deg,#fd267a,#ff6036)",
       },
       boxShadow: {
         myShadow: "0 2px 6px 0px rgb(101,110,123,0.8)",

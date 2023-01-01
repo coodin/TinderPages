@@ -1,7 +1,11 @@
 import React, { ReactNode } from "react";
 import { Link } from "react-router-dom";
 
-export default function footer() {
+interface FooterProps {
+  additionalSection?: ReactNode;
+}
+
+export default function footer({ additionalSection = null }: FooterProps) {
   return (
     <footer className="mx-auto w-full items-center px-3 pb-5 min-[896px]:mx-auto min-[896px]:w-[90%] min-[896px]:p-5">
       {/* Legit, Career, Social */}
@@ -58,6 +62,7 @@ export default function footer() {
           </div>
         </div>
       </section>
+      {additionalSection}
       {/* Accessibility Links */}
       <section className="border-t-[1px] py-3">
         <div className=" text-center text-xs min-[896px]:flex min-[896px]:justify-between min-[896px]:text-[14px]">
