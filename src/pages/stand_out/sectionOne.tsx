@@ -5,10 +5,10 @@ export default function sectionOne() {
   return (
     <section className={` w-full bg-li-background-color py-3 min-[896px]:py-5`}>
       <div className="mx-auto mb-4 flex h-full w-full flex-col min-[896px]:max-w-[1024px] min-[896px]:flex-row">
-        <div className="order-2 h-full w-full flex-1 ">
-          <article className="px-4 py-3 text-center">
+        <div className="order-2 h-full w-full flex-1 min-[896px]:order-1 ">
+          <article className="px-4 py-3 text-center min-[896px]:text-left">
             <header className="w-full text-center font-extrabold italic">
-              <h1 className="my-1 text-[32px] text-tinder-color">
+              <h1 className="my-1 text-[32px] text-tinder-color min-[896px]:text-left">
                 {" "}
                 Vitesi Yükselt
               </h1>
@@ -23,7 +23,7 @@ export default function sectionOne() {
             </span>
           </article>
         </div>
-        <div className="order-1 h-full w-full flex-1">
+        <div className="order-1 h-full w-full flex-1 min-[896px]:order-2">
           <div className="relative aspect-[4/3]">
             <div className="absolute left-0 top-0 h-full w-full">
               <CardComponent

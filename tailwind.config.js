@@ -37,13 +37,18 @@ module.exports = {
         contactUsBoxShadow: "-2px 2px 4px rgb(0 0 0 / 10%);",
         hovercontactUsBoxShadow: "-2px 2px 4px rgb(0 0 0 / 10%);",
       },
+      transitionProperty: {
+        example: "transform , visibility",
+      },
       colors: {
+        "color-of-selection": "#21262e",
         "nav-item-color": "#505965",
         "tinder-color": "#21262e",
         "myButton-background": "#111418",
         "nav-navigation-hover-color": "#d6002f",
         "colse-svg-color": "#7c8591",
         "li-background-color": "#f0f2f4",
+        "community-rules-button": "#656e7b",
       },
       columns: {
         "4xs": "14rem",

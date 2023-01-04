@@ -32,6 +32,11 @@ export default function Header() {
                 ["Abonelik Kategorileri", ""],
                 ["Swipe Night", ""],
               ]}
+              innerTextList={[
+                { text: "Tinder Plus®", href: "" },
+                { text: "Tinder Gold™", href: "" },
+                { text: "Tinder Platinum™", href: "" },
+              ]}
             />
             <LinkElement href={"about"} text={"Keşfet"} />
             <LinkElement
@@ -63,6 +68,7 @@ interface LinkElementProps {
   text: string;
   includeList?: boolean;
   textList?: [text: string, href: string][];
+  innerTextList?: { text: string; href: string }[];
 }
 
 function LinkElement({
@@ -70,6 +76,7 @@ function LinkElement({
   text,
   includeList = false,
   textList = [],
+  innerTextList = undefined,
 }: LinkElementProps) {
   return (
     <div className={"group relative"}>
@@ -90,16 +97,32 @@ function LinkElement({
               " -translate-x-5 bg-white px-5 pt-10 pb-[10px] text-nav-item-color"
             }
           >
-            {textList.map((value) => {
+            {textList.map((upperValue) => {
               return (
-                <li key={value[0]} className={"w-[213px] py-1"}>
+                <li key={upperValue[0]} className={"w-[213px] py-1"}>
                   <Link
                     className="  flex cursor-pointer text-left text-xl font-semibold hover:text-nav-navigation-hover-color "
-                    to={value[1]}
+                    to={upperValue[1]}
                   >
-                    {/* Ayrıcalıklı Özellikler */}
-                    {value[0]}
+                    {upperValue[0]}
                   </Link>
+                  {innerTextList != undefined &&
+                  upperValue[0] === "Abonelik Kategorileri" ? (
+                    <ul className="pl-10">
+                      {innerTextList.map((innerValue) => {
+                        return (
+                          <li key={innerValue.text} className="py-1">
+                            <a
+                              href={innerValue.href}
+                              className="text-xl font-semibold text-nav-item-color hover:text-nav-navigation-hover-color"
+                            >
+                              {innerValue.text}
+                            </a>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  ) : null}
                 </li>
               );
             })}

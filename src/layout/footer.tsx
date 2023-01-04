@@ -201,7 +201,7 @@ function FooterComponent({ list, head }: FooterComponentProps) {
         {list == undefined
           ? listOfSvg.map((both) => {
               return (
-                <li className="inline-block h-[42px] w-[42px]">
+                <li key={both[1]} className="inline-block h-[42px] w-[42px]">
                   <a
                     href={both[1]}
                     className="text-sm text-tinder-color duration-200 hover:text-nav-navigation-hover-color "
@@ -213,7 +213,10 @@ function FooterComponent({ list, head }: FooterComponentProps) {
             })
           : list.map((both) => {
               return (
-                <li className="leading-[26px] min-[896px]:leading-8">
+                <li
+                  key={both[1]}
+                  className="leading-[26px] min-[896px]:leading-8"
+                >
                   <a
                     href={both[1]}
                     className="text-sm text-tinder-color hover:text-nav-navigation-hover-color min-[896px]:text-[16px]"
